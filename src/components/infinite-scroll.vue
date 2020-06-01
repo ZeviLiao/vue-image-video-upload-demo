@@ -1,14 +1,16 @@
 <template>
-  <div
-    class="infinite-list-wrapper"
-    ref="project_card_list"
-    :style="`height:${height}px;overflow:auto;margin-top:100px`"
-  >
-    <ul class="list" v-infinite-scroll="load" infinite-scroll-disabled="disabled">
-      <li v-for="i in count" class="list-item" :key="i">{{ i }}</li>
-    </ul>
-    <p v-if="loading">Loading...</p>
-    <p v-if="noMore">No more</p>
+  <div style="margin:60px;padding:60px;background:yellow">
+    <div
+      class="infinite-list-wrapper"
+      ref="project_card_list"
+      :style="`height:${height}px;overflow:auto;margin-top:100px`"
+    >
+      <ul class="list" v-infinite-scroll="load" infinite-scroll-disabled="disabled">
+        <li v-for="i in count" class="list-item" :key="i">{{ i }}</li>
+      </ul>
+      <p v-if="loading">Loading...</p>
+      <p v-if="noMore">No more</p>
+    </div>
   </div>
 </template>
 
@@ -34,7 +36,7 @@ export default {
   },
   computed: {
     noMore() {
-      return this.count >= 20;
+      return this.count >= 200;
     },
     disabled() {
       return this.loading || this.noMore;
@@ -46,7 +48,7 @@ export default {
       setTimeout(() => {
         this.count += 2;
         this.loading = false;
-      }, 500);
+      }, 50);
     },
     resize() {
       this.height =
@@ -91,6 +93,18 @@ export default {
   background: #fff6f6;
   color: #ff8484;
   /* margin: 5px; */
+}
+
+.list{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.list-item {
+  width: 100px;
+  height: 100px;
+  margin:15px;
 }
 
 body {
