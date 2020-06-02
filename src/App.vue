@@ -3,7 +3,8 @@
     <!-- <image-upload msg="images" />
     <video-upload msg="vides" />
     <youtube-apply msg="youtube" />-->
-    <in-scroll msg="zevi"></in-scroll>
+    <!-- <in-scroll msg="zevi"></in-scroll> -->
+    <render-test msg="zevi"></render-test>
   </div>
 </template>
 
@@ -11,7 +12,8 @@
 // import ImageUpload from "./components/imageUpload";
 // import VideoUpload from "./components/videoUpload";
 // import YoutubeApply from "./components/youtube-apply";
-import InScroll from "./components/infinite-scroll";
+// import InScroll from "./components/infinite-scroll";
+import RenderTest from "./components/render-test";
 
 export default {
   name: "app",
@@ -19,7 +21,8 @@ export default {
     // ImageUpload,
     // VideoUpload,
     // YoutubeApply
-    InScroll
+    // InScroll
+    RenderTest
   }
 };
 </script>
