@@ -1,13 +1,23 @@
+
 <script>
 export default {
   props: {
-    level: {
-      require: true,
-      type: Number
+    name: {
+      require: true
     }
   },
-  render(h) {
-    return h("h" + this.level, this.$slots.default);
+  render(createElement) {
+    let self = this;
+    return createElement("input", {
+      domProps: {
+        value: self.name
+      },
+      on: {
+        input(event) {
+          self.$emit("input", event.target.value);
+        }
+      }
+    });
   }
 };
 </script>
