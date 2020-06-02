@@ -1,17 +1,11 @@
-<template>
-  <div>
-    <child1 :name="name" v-model="name"></child1>
-    <p>{{name}}</p>
-  </div>
-</template>
+
 <script>
 const child1 = () => import("./child1.vue");
+
 export default {
-  components: { child1 },
-  data() {
-    return {
-      name: "Demi"
-    };
+  components: { Child1: child1 },
+  render() {
+    return <Child1 level={1}>我是標題</Child1>;
   }
 };
 </script>
